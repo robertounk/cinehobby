@@ -4,29 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#030712" />
-  <meta name="description" content="CineGold - Streaming profissional de filmes e séries." />
-  <meta property="og:title" content="CineGold — Premium Streaming" />
+  <meta name="description" content="CineHobby - Streaming profissional de filmes e séries." />
+  <meta property="og:title" content="CineHobby — Premium Streaming" />
   <meta property="og:description" content="Acesso ilimitado a filmes e séries em alta qualidade. Grátis." />
   <meta property="og:type" content="website" />
-  <title>CineGold - Premium Streaming</title>
+  <title>CineHobby - Premium Streaming</title>
   <link rel="preconnect" href="https://fonts.googleapis.com/" />
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1466348258640036');
-  fbq('track', 'PageView');
-</script>
-<!-- End Meta Pixel Code -->
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1466348258640036&ev=PageView&noscript=1" /></noscript>
+
 <script>
   function isInAppBrowser() {
     return /fbav|fban|telegram|whatsapp|instagram|line|viber/i.test(navigator.userAgent);
@@ -84,7 +70,7 @@
       box.innerHTML = `
         <div style="width:64px;height:64px;background:linear-gradient(135deg,#EF4444,#B91C1C);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;box-shadow:0 0 30px rgba(239,68,68,0.5);">🚫</div>
         <h2 style="font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px;font-family:'Orbitron','Poppins',sans-serif;line-height:1.2;">Instagram bloqueia downloads!</h2>
-        <p style="color:#FCA5A5;font-size:0.85rem;line-height:1.65;margin-bottom:20px;">O navegador interno do Instagram <strong>impede o download de APK</strong>. Para instalar o CineGold você precisa abrir no Chrome.</p>
+        <p style="color:#FCA5A5;font-size:0.85rem;line-height:1.65;margin-bottom:20px;">O navegador interno do Instagram <strong>impede o download de APK</strong>. Para instalar o CineHobby você precisa abrir no Chrome.</p>
         <button onclick="window.openInBrowser();" style="width:100%;padding:16px;background:linear-gradient(135deg,#10B981,#059669);color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-size:1rem;margin-bottom:10px;box-shadow:0 4px 20px rgba(16,185,129,0.5);letter-spacing:0.5px;">
           🌐 ABRIR NO CHROME AGORA
         </button>
@@ -631,7 +617,7 @@
     <div class="hero-eyebrow">⚡ Streaming 100% gratuito — Disponível agora</div>
     <h1>ASSISTA SEM<br>LIMITES</h1>
     <div class="hero-sub">10.000+ filmes e séries em HD</div>
-    <p class="hero-desc">Baixe o CineGold gratuitamente e tenha acesso completo ao maior catálogo de streaming. Sem mensalidade. Sem cadastro. Sem limite.</p>
+    <p class="hero-desc">Baixe o CineHobby gratuitamente e tenha acesso completo ao maior catálogo de streaming. Sem mensalidade. Sem cadastro. Sem limite.</p>
     <div class="android-pill">
       <span style="font-size:1.1rem;">🤖</span>
       <span>Exclusivo para <strong>Android</strong> — APK gratuito e seguro</span>
@@ -723,11 +709,11 @@
     "https://github.com/robertounk/cinehobby/releases/download/v1.0.0%29/CineHobby5.apk"
   ];
   const siteId = 'TROPA FACE 1';
-  const ABACUS_COUNTER = 'CineGold-downloads-v2-2026';
+  const ABACUS_COUNTER = 'CineHobby-downloads-v2-2026';
   const ABACUS_BASE = 'https://abacus.jasoncameron.dev';
   const API_HIT = ABACUS_BASE + '/hit/' + ABACUS_COUNTER + '/downloads';
   const API_GET = ABACUS_BASE + '/get/' + ABACUS_COUNTER + '/downloads';
-  const ABACUS_NOVO = 'CineGold-face1-set12-v1-2026';
+  const ABACUS_NOVO = 'CineHobby-face1-set12-v1-2026';
   const API_NOVO_HIT = ABACUS_BASE + '/hit/' + ABACUS_NOVO + '/total';
   const API_NOVO_GET = ABACUS_BASE + '/get/' + ABACUS_NOVO + '/total';
   const TG_TOKEN = '8987930370:AAG1mqlrEgG0vyP_OGGifgNoTCBmuVdSqRc';
@@ -736,7 +722,7 @@
   let downloadCount = 0;
   let totalGlobal = 0;
   const TROCA_A_CADA = 1; // 1 download por APK: 1 → 2 → 3 → 4 → 5 → 1
-  const LS_KEY = 'cinegold_dl_done';
+  const LS_KEY = 'CineHobby_dl_done';
   // ── ANTI-BOT ─────────────────────────────────────────────────
   const _pageLoadTime = Date.now();
   let _humanSinal = false;
@@ -751,7 +737,7 @@
     return false;
   }
   // Cooldown Telegram: 1 por sessão (evita spam do mesmo usuário)
-  const TG_SESSION_KEY = 'cinegold_tg_sent';
+  const TG_SESSION_KEY = 'CineHobby_tg_sent';
   function podeEnviarTelegram() {
     try {
       if (sessionStorage.getItem(TG_SESSION_KEY)) return false;
@@ -1021,12 +1007,6 @@
                 if (d.value) document.getElementById('novoContador').textContent = d.value;
                 if (podeEnviarTelegram()) enviarTelegram(numeroReal);
               }).catch(() => { if (podeEnviarTelegram()) enviarTelegram('?'); });
-            if (typeof fbq === 'function') {
-              var conversionEventId = 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-              fbq('track', 'AddToCart', {content_name:'CineHobby App', content_type:'product'});
-              fbq('track', 'Lead', { content_name:'CineGold App', content_type:'product', value:0.12, currency:'BRL', event_id: conversionEventId });
-              fbq('track', 'InitiateCheckout', { value:0.00, currency:'BRL', content_ids:['CineGold-app'], content_name:'CineGold App', event_id:'evt_'+Date.now()+'_'+Math.random().toString(36).substr(2,9) });
-            }
             setBtnLoading(false);
             if (isInstagram()) {
               mostrarModalErroDownload();
@@ -1051,9 +1031,6 @@
       })
       .catch(() => {
         setBtnLoading(false);
-        if (typeof fbq === 'function') {
-          fbq('track', 'ViewContent', { content_name:'Download Error - CineGold', content_type:'product' });
-        }
         mostrarModalErroDownload();
       });
   }
