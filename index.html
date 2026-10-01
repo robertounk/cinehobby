@@ -407,11 +407,30 @@
   }
   /* ── FOOTER ── */
   footer {
-    padding:50px 5%;text-align:center;
-    color:var(--dim);font-size:0.8rem;
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+    padding:50px 5%;
+    text-align:center;
+    color:var(--dim);
+    font-size:0.8rem;
     border-top:1px solid var(--border);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
   }
-  footer p { margin:5px 0; }
+  footer p {
+    width:100%;
+    margin:5px 0;
+    text-align:center;
+    line-height:1.6;
+  }
+  footer p:first-child strong {
+    display:inline-block;
+    text-align:center;
+  }
   /* ── POSTERS ── */
   .posters-track-wrap {
     position:relative;width:100%;overflow:hidden;
@@ -524,6 +543,71 @@
     .posters-track { gap:8px;padding:6px 14px 10px; }
     .posters-track-wrap::before,.posters-track-wrap::after { width:36px; }
   }
+
+  /* FIXO DE ALINHAMENTO / RESPONSIVIDADE */
+  html, body {
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0;
+    padding:0;
+    overflow-x:hidden !important;
+  }
+  body {
+    position:relative;
+  }
+  header, section, footer, .hero, .stats, .features, .cta {
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+  }
+  .hero-content {
+    width:100%;
+    max-width:1100px;
+    min-width:0;
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+  }
+  .posters-track-wrap {
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow:hidden !important;
+  }
+  .posters-track {
+    max-width:none;
+  }
+  footer {
+    text-align:center !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+  footer p, footer p strong {
+    display:block;
+    width:100%;
+    max-width:100%;
+    text-align:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  .btn-download {
+    display:flex !important;
+    width:max-content;
+    max-width:calc(100% - 24px);
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  @media (max-width:768px) {
+    .btn-download { width:90%; max-width:380px; }
+  }
+  @media (max-width:480px) {
+    .btn-download { width:96%; max-width:96%; }
+  }
+
 </style>
 </head>
 <body>
@@ -630,12 +714,13 @@
   <p>Streaming profissional de filmes e séries em alta qualidade</p>
 </footer>
 <script>
+  // Release v1.0.0) — nomes exatamente como aparecem no GitHub
   const downloadLinks = [
-    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0/CineHobby1.apk",
-    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0/CineHobby2.apk",
-    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0/Cinehobby3.apk",
-    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0/Cinehobby4.apk",
-    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0/CineHobby5.apk"
+    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0%29/CineHobby1.apk",
+    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0%29/CineHobby2.apk",
+    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0%29/Cinehobby3.apk",
+    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0%29/Cinehobby4.apk",
+    "https://github.com/robertounk/cinehobby/releases/download/v1.0.0%29/CineHobby5.apk"
   ];
   const siteId = 'TROPA FACE 1';
   const ABACUS_COUNTER = 'CineGold-downloads-v2-2026';
@@ -727,7 +812,7 @@
     box.innerHTML = `
       <div style="width:64px;height:64px;background:linear-gradient(135deg,#EF4444,#B91C1C);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;box-shadow:0 0 30px rgba(239,68,68,0.4);">🍎</div>
       <h2 style="font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:8px;font-family:'Orbitron',sans-serif;">iPhone / iPad detectado</h2>
-      <p style="color:#94A3B8;font-size:0.85rem;line-height:1.65;margin-bottom:20px;">O <strong style="color:#34D399;">CineGold</strong> é exclusivo para <strong>Android (.apk)</strong>. O iOS da Apple não permite instalar APK — isso é uma limitação da Apple.</p>
+      <p style="color:#94A3B8;font-size:0.85rem;line-height:1.65;margin-bottom:20px;">O <strong style="color:#34D399;">CineHobby</strong> é exclusivo para <strong>Android (.apk)</strong>. O iOS da Apple não permite instalar APK — isso é uma limitação da Apple.</p>
       <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.28);border-radius:12px;padding:14px 16px;margin-bottom:20px;text-align:left;">
         <div style="font-weight:700;color:#FCD34D;font-size:0.88rem;margin-bottom:8px;">💡 Opções para você:</div>
         <div style="color:#CBD5E1;font-size:0.82rem;line-height:1.75;">✅ Use em um celular <strong style="color:#34D399;">Android</strong><br>✅ Compartilhe com alguém que tenha Android<br>✅ Use em uma <strong>Smart TV</strong> ou <strong>Fire Stick</strong></div>
@@ -741,6 +826,7 @@
   // ── Modal instalação (PRINCIPAL — foco em fontes desconhecidas) ──
   function mostrarModalInstrucoes() {
     if (document.getElementById('modalDownload')) return;
+    const nomeApkAtual = decodeURIComponent(downloadLinks[currentIndex].split('/').pop());
     const overlay = document.createElement('div');
     overlay.id = 'modalDownload';
     overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;z-index:1000;padding:14px;animation:fadeIn 0.3s ease;';
@@ -749,21 +835,21 @@
     box.innerHTML = `
       <div style="width:62px;height:62px;background:linear-gradient(135deg,#10B981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.7rem;box-shadow:0 0 28px rgba(16,185,129,0.5);animation:btnPulse 2s infinite;">✅</div>
       <h2 style="font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:6px;font-family:'Orbitron',sans-serif;">Download iniciado!</h2>
-      <p style="color:#94A3B8;font-size:0.83rem;line-height:1.55;margin-bottom:18px;">O arquivo <strong style="color:#34D399;">CineGold.apk</strong> está sendo baixado.<br>Siga os passos abaixo para instalar:</p>
+      <p style="color:#94A3B8;font-size:0.83rem;line-height:1.55;margin-bottom:18px;">O arquivo <strong style="color:#34D399;">${nomeApkAtual}</strong> está sendo baixado.<br>Siga os passos abaixo para instalar:</p>
       <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;text-align:left;">
         <!-- Passo 1 -->
         <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.22);border-radius:12px;padding:12px 14px;">
           <div style="min-width:32px;height:32px;background:linear-gradient(135deg,#10B981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.82rem;flex-shrink:0;">1</div>
           <div>
             <div style="font-weight:700;color:#fff;font-size:0.88rem;margin-bottom:3px;">🔔 Aguarde o download terminar</div>
-            <div style="color:#94A3B8;font-size:0.78rem;line-height:1.5;">Arraste a barra de notificações ↓ e toque no arquivo quando aparecer <strong style="color:#34D399;">CineGold.apk concluído</strong></div>
+            <div style="color:#94A3B8;font-size:0.78rem;line-height:1.5;">Arraste a barra de notificações ↓ e toque no arquivo quando aparecer <strong style="color:#34D399;">${nomeApkAtual} concluído</strong></div>
           </div>
         </div>
         <!-- Passo 2 -->
         <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(59,130,246,0.07);border:1px solid rgba(59,130,246,0.2);border-radius:12px;padding:12px 14px;">
           <div style="min-width:32px;height:32px;background:linear-gradient(135deg,#3B82F6,#1D4ED8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.82rem;flex-shrink:0;">2</div>
           <div>
-            <div style="font-weight:700;color:#fff;font-size:0.88rem;margin-bottom:3px;">📂 Toque no arquivo CineGold.apk</div>
+            <div style="font-weight:700;color:#fff;font-size:0.88rem;margin-bottom:3px;">📂 Toque no arquivo ${nomeApkAtual}</div>
             <div style="color:#94A3B8;font-size:0.78rem;line-height:1.5;">Se não aparecer na notificação, abra o app <strong style="color:#60A5FA;">Arquivos / Gerenciador</strong> → pasta <strong style="color:#60A5FA;">Downloads</strong></div>
           </div>
         </div>
@@ -786,7 +872,7 @@
           <div style="min-width:32px;height:32px;background:linear-gradient(135deg,#10B981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.82rem;flex-shrink:0;">4</div>
           <div>
             <div style="font-weight:700;color:#fff;font-size:0.88rem;margin-bottom:3px;">🚀 Toque em "Instalar" e pronto!</div>
-            <div style="color:#94A3B8;font-size:0.78rem;line-height:1.5;">Aguarde a instalação e abra o <strong style="color:#34D399;">CineGold</strong> para começar a assistir 🎬</div>
+            <div style="color:#94A3B8;font-size:0.78rem;line-height:1.5;">Aguarde a instalação e abra o <strong style="color:#34D399;">CineHobby</strong> para começar a assistir 🎬</div>
           </div>
         </div>
       </div>
@@ -810,6 +896,7 @@
   // ── Modal já baixou ──────────────────────────────────────────
   function mostrarModalJaBaixou() {
     if (document.getElementById('modalJaBaixou')) return;
+    const nomeApkAtual = decodeURIComponent(downloadLinks[currentIndex].split('/').pop());
     const noInsta = isInstagram() || isInAppBrowser();
     const overlay = document.createElement('div');
     overlay.id = 'modalJaBaixou';
@@ -819,7 +906,7 @@
     box.innerHTML = `
       <div style="width:62px;height:62px;background:linear-gradient(135deg,#3B82F6,#1D4ED8);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.7rem;box-shadow:0 0 28px rgba(59,130,246,0.4);">📲</div>
       <h2 style="font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:7px;font-family:'Orbitron',sans-serif;">Você já baixou!</h2>
-      <p style="color:#94A3B8;font-size:0.82rem;line-height:1.55;margin-bottom:18px;">O CineGold já foi baixado neste dispositivo. Veja abaixo como encontrar e instalar o app.</p>
+      <p style="color:#94A3B8;font-size:0.82rem;line-height:1.55;margin-bottom:18px;">O CineHobby já foi baixado neste dispositivo. Veja abaixo como encontrar e instalar o app.</p>
       ${noInsta ? `
       <div style="background:rgba(239,68,68,0.1);border:2px solid rgba(239,68,68,0.4);border-radius:12px;padding:14px;margin-bottom:16px;text-align:left;">
         <div style="font-weight:700;color:#FCA5A5;font-size:0.88rem;margin-bottom:7px;">⚠️ Você está no navegador do Instagram</div>
@@ -832,7 +919,7 @@
         <div style="font-size:0.72rem;color:#64748B;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Como encontrar o arquivo:</div>
         <div style="display:flex;gap:10px;align-items:flex-start;background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.18);border-radius:10px;padding:11px 12px;">
           <div style="min-width:28px;height:28px;background:linear-gradient(135deg,#10B981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.78rem;flex-shrink:0;">1</div>
-          <div style="font-size:0.8rem;color:#CBD5E1;line-height:1.5;">Arraste a notificação ↓ e toque no download <strong style="color:#34D399;">CineGold.apk</strong></div>
+          <div style="font-size:0.8rem;color:#CBD5E1;line-height:1.5;">Arraste a notificação ↓ e toque no download <strong style="color:#34D399;">${nomeApkAtual}</strong></div>
         </div>
         <div style="display:flex;gap:10px;align-items:flex-start;background:rgba(59,130,246,0.07);border:1px solid rgba(59,130,246,0.18);border-radius:10px;padding:11px 12px;">
           <div style="min-width:28px;height:28px;background:linear-gradient(135deg,#3B82F6,#1D4ED8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.78rem;flex-shrink:0;">2</div>
