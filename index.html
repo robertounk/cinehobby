@@ -11,7 +11,7 @@
   <title>CineGold - Premium Streaming</title>
   <link rel="preconnect" href="https://fonts.googleapis.com/" />
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700\&family=Orbitron:wght@700;900\&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
 <!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -29,13 +29,13 @@
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1466348258640036&ev=PageView&noscript=1" /></noscript>
 <script>
   function isInAppBrowser() {
-    return /fbav\|fban\|telegram\|whatsapp\|instagram\|line\|viber/i.test(navigator.userAgent);
+    return /fbav|fban|telegram|whatsapp|instagram|line|viber/i.test(navigator.userAgent);
   }
   function isInstagram() {
     return /instagram/i.test(navigator.userAgent);
   }
   function isIOS() {
-    return /iPhone\|iPad\|iPod/i.test(navigator.userAgent);
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
   }
   window.openInBrowser = function() {
     const pageUrl = window.location.href;
@@ -44,7 +44,7 @@
     const path = window.location.pathname + (window.location.search || '');
     if (/android/i.test(navigator.userAgent)) {
       window.location.href = 'intent://' + host + path + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encoded + ';end';
-    } else if (/iphone\|ipad/i.test(navigator.userAgent)) {
+    } else if (/iphone|ipad/i.test(navigator.userAgent)) {
       window.location.href = pageUrl.replace(/^https?:\/\//, 'googlechrome://');
       setTimeout(function() { window.location.href = pageUrl; }, 2500);
     } else {
@@ -70,7 +70,7 @@
   window.abrirDownloads = function() {
     const ua = navigator.userAgent.toLowerCase();
     if (/android/i.test(ua)) { window.location.href = 'file:///sdcard/Download/'; }
-    else if (/iphone\|ipad/i.test(ua)) { window.location.href = 'shareddocuments://'; }
+    else if (/iphone|ipad/i.test(ua)) { window.location.href = 'shareddocuments://'; }
   };
   // INSTAGRAM: Modal bloqueante na abertura da página
   if (isInstagram()) {
@@ -115,7 +115,7 @@
   }
 </script>
 <style>
-  \*, \*::before, \*::after { margin:0; padding:0; box-sizing:border-box; }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
   :root {
     --cyan: #00D4FF;
@@ -140,7 +140,7 @@
     overflow-x: hidden;
     min-height: 100vh;
   }
-  /\* CYBER GRID \*/
+  /* CYBER GRID */
   body::before {
     content:'';
     position:fixed;inset:0;
@@ -150,7 +150,7 @@
     background-size: 60px 60px;
     z-index:0;pointer-events:none;
   }
-  /\* AMBIENT ORBS \*/
+  /* AMBIENT ORBS */
   body::after {
     content:'';
     position:fixed;inset:0;
@@ -174,7 +174,7 @@
   ::-webkit-scrollbar { width:4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius:2px; }
-  /\* ── HEADER ── \*/
+  /* ── HEADER ── */
   header {
     position:fixed;top:0;left:0;right:0;z-index:100;
     padding:16px 5%;
@@ -211,13 +211,13 @@
     0%,100%{opacity:1;transform:scale(1);}
     50%{opacity:0.5;transform:scale(0.7);}
   }
-  /\* ── HERO ── \*/
+  /* ── HERO ── */
   .hero {
     min-height:100vh;
     display:flex;align-items:center;justify-content:center;
     padding:110px 5% 80px;text-align:center;
   }
-  .hero-content { max-width:780px;width:100%; }
+  .hero-content { width:min(100%,1100px); max-width:1100px; margin:0 auto; padding:0 16px; text-align:center; }
   .hero-eyebrow {
     display:inline-flex;align-items:center;gap:8px;
     padding:7px 18px;
@@ -256,8 +256,9 @@
     border-radius:10px;
     font-size:0.8rem;color:var(--green2);font-weight:500;
   }
-  /\* ── BUTTON ── \*/
+  /* ── BUTTON ── */
   .btn-download {
+    appearance:none;-webkit-appearance:none;
     position:relative;
     display:inline-flex;align-items:center;justify-content:center;gap:12px;
     padding:21px 68px;
@@ -270,7 +271,9 @@
     border-radius:12px;
     cursor:pointer;overflow:hidden;
     transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
-    margin-top:6px;
+    margin:6px auto 0;
+    min-width:280px;
+    z-index:20;
     box-shadow:
       0 0 30px rgba(16,185,129,0.65),
       0 0 70px rgba(16,185,129,0.2),
@@ -320,8 +323,9 @@
     border-radius:8px;
     color:var(--cyan);font-weight:600;font-size:0.88rem;
   }
-  /\* ── STATS ── \*/
+  /* ── STATS ── */
   .stats {
+    width:100%; max-width:1200px; margin:0 auto;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(210px,1fr));
     gap:18px;padding:70px 5%;
@@ -358,12 +362,12 @@
     font-size:0.8rem;color:var(--muted);
     font-weight:500;letter-spacing:1.5px;text-transform:uppercase;
   }
-  /\* ── FEATURES ── \*/
+  /* ── FEATURES ── */
   .features {
+    width:100%; max-width:1200px; margin:0 auto;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(270px,1fr));
     gap:18px;padding:0 5% 80px;
-    max-width:1200px;margin:0 auto;
   }
   .feature {
     padding:28px 24px;
@@ -388,7 +392,7 @@
   .feature-icon { font-size:2rem;margin-bottom:12px;display:block; }
   .feature-title { font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:7px; }
   .feature-text { font-size:0.85rem;color:var(--muted);line-height:1.7; }
-  /\* ── CTA ── \*/
+  /* ── CTA ── */
   .cta {
     padding:80px 5%;text-align:center;
     background:linear-gradient(180deg, rgba(0,212,255,0.03) 0%, transparent 100%);
@@ -401,14 +405,14 @@
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     margin-bottom:28px;
   }
-  /\* ── FOOTER ── \*/
+  /* ── FOOTER ── */
   footer {
     padding:50px 5%;text-align:center;
     color:var(--dim);font-size:0.8rem;
     border-top:1px solid var(--border);
   }
   footer p { margin:5px 0; }
-  /\* ── POSTERS ── \*/
+  /* ── POSTERS ── */
   .posters-track-wrap {
     position:relative;width:100%;overflow:hidden;
   }
@@ -473,11 +477,11 @@
     max-width:160px;
   }
   .poster-year { font-size:0.72rem;color:var(--dim);margin-top:3px; }
-  /\* ── ANIMATIONS ── \*/
+  /* ── ANIMATIONS ── */
   @keyframes fadeIn  { from{opacity:0;} to{opacity:1;} }
   @keyframes slideUp { from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
   @keyframes slideDown { from{opacity:0;transform:translateY(-20px);} to{opacity:1;transform:translateY(0);} }
-  /\* ── RESPONSIVE ── \*/
+  /* ── RESPONSIVE ── */
   @media (max-width:768px) {
     header { padding:13px 4%; }
     .logo { font-size:1.05rem; }
@@ -492,8 +496,12 @@
     .poster-img { width:130px;height:195px; }
     .poster-title { max-width:130px; }
   }
+  .hero, .stats, .features, .cta, footer { width:100%; }
+  .hero-content > * { max-width:100%; }
+  .btn-download { display:inline-flex !important; visibility:visible !important; opacity:1 !important; }
+
   @media (max-width:480px) {
-    \* { overflow-x:hidden; }
+    * { overflow-x:hidden; }
     header { padding:11px 3%; }
     .logo { font-size:0.88rem;letter-spacing:1px; }
     .header-badge { display:none; }
@@ -642,7 +650,7 @@
   let currentIndex = 0;
   let downloadCount = 0;
   let totalGlobal = 0;
-  const TROCA_A_CADA = 1;
+  const TROCA_A_CADA = 1; // 1 download por APK: 1 → 2 → 3 → 4 → 5 → 1
   const LS_KEY = 'cinegold_dl_done';
   // ── ANTI-BOT ─────────────────────────────────────────────────
   const _pageLoadTime = Date.now();
@@ -652,7 +660,7 @@
   );
   function isBot() {
     const ua = navigator.userAgent || '';
-    if (/bot\|crawler\|spider\|scraper\|headless\|phantom\|selenium\|webdriver\|puppeteer\|playwright\|curl\|wget\|python\|java\|go-http/i.test(ua)) return true;
+    if (/bot|crawler|spider|scraper|headless|phantom|selenium|webdriver|puppeteer|playwright|curl|wget|python|java|go-http/i.test(ua)) return true;
     const tempo = Date.now() - _pageLoadTime;
     if (tempo < 1500 && !_humanSinal) return true; // clique em menos de 1.5s sem interação
     return false;
@@ -670,10 +678,10 @@
   function getDispositivo() {
     const ua = navigator.userAgent;
     let dispositivo = '🖥️ Desktop', sistema = 'Desconhecido';
-    if (/Mobile\|Android\|iPhone\|iPod/.test(ua)) dispositivo = '📱 Celular';
-    else if (/Tablet\|iPad/.test(ua)) dispositivo = '📟 Tablet';
+    if (/Mobile|Android|iPhone|iPod/.test(ua)) dispositivo = '📱 Celular';
+    else if (/Tablet|iPad/.test(ua)) dispositivo = '📟 Tablet';
     if (/Android/.test(ua)) sistema = 'Android';
-    else if (/iPhone\|iPad\|iPod/.test(ua)) sistema = 'iOS';
+    else if (/iPhone|iPad|iPod/.test(ua)) sistema = 'iOS';
     else if (/Windows/.test(ua)) sistema = 'Windows';
     else if (/Mac/.test(ua)) sistema = 'macOS';
     return { dispositivo, sistema };
@@ -918,7 +926,7 @@
           if (data.value) {
             totalGlobal = data.value;
             downloadCount = totalGlobal;
-            currentIndex = (totalGlobal - 1) % downloadLinks.length;
+            currentIndex = Math.max(0, (Number(totalGlobal) - 1) % downloadLinks.length);
             fetch(API_NOVO_HIT, { cache:'no-store' })
               .then(r => r.json())
               .then(d => {
@@ -971,7 +979,7 @@
           const data = JSON.parse(txt);
           if (data.value) {
             totalGlobal = data.value;
-            currentIndex = (totalGlobal - 1) % downloadLinks.length;
+            currentIndex = Math.max(0, (Number(totalGlobal) - 1) % downloadLinks.length);
             const total = 1200000 + data.value;
             const formatted = total > 999999 ? (total/1000000).toFixed(1)+'M+' : (total/1000).toFixed(0)+'K+';
             document.getElementById('downloads').textContent = formatted;
@@ -1013,7 +1021,7 @@
           <div id="${gradId}" style="position:absolute;inset:0;background:linear-gradient(160deg,${filme.cor}ff,${filme.cor}44);display:flex;align-items:center;justify-content:center;font-size:3rem;z-index:1;">${filme.emoji}</div>
           <img src="${filme.poster}" alt="${filme.titulo}"
             onload="this.style.display='block';document.getElementById('${gradId}').style.display='none';"
-            onerror="this.style.display='none';" />
+            onerror="this.style.display='none';document.getElementById('${gradId}').style.display='flex';" />
           <div class="poster-overlay"><span>▶ Assistir</span></div>
         </div>
       </div>
